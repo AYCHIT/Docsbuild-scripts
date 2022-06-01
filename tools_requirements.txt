@@ -4,18 +4,34 @@
 #
 #    pip-compile tools_requirements.in
 #
-certifi==2019.11.28       # via httpx
-chardet==3.0.4            # via httpx
-gitdb2==2.0.6             # via gitpython
+anyio==3.6.1
+    # via httpcore
+certifi==2019.11.28
+    # via
+    #   httpcore
+    #   httpx
+gitdb2==2.0.6
+    # via gitpython
 gitpython==3.0.5
-h11==0.8.1                # via httpx
-h2==3.1.1                 # via httpx
-hpack==3.0.0              # via h2
-hstspreload==2019.12.6    # via httpx
-httpx==0.9.3
-hyperframe==5.2.0         # via h2
-idna==2.8                 # via httpx
-rfc3986==1.3.2            # via httpx
-smmap2==2.0.5             # via gitdb2
-sniffio==1.1.0            # via httpx
+    # via -r tools_requirements.in
+h11==0.12.0
+    # via httpcore
+httpcore==0.15.0
+    # via httpx
+httpx==0.23.0
+    # via -r tools_requirements.in
+idna==2.8
+    # via
+    #   anyio
+    #   rfc3986
+rfc3986[idna2008]==1.3.2
+    # via httpx
+smmap2==2.0.5
+    # via gitdb2
+sniffio==1.1.0
+    # via
+    #   anyio
+    #   httpcore
+    #   httpx
 tabulate==0.8.6
+    # via -r tools_requirements.in
